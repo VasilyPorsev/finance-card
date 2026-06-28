@@ -43,4 +43,15 @@
   window.addEventListener('resize', function () {
     if (window.innerWidth > 760) closeMenu();
   });
+
+  // close on click outside the header
+  document.addEventListener('click', function (e) {
+    if (!header || !header.classList.contains('is-open')) return;
+    if (!e.target.closest('.site-header')) closeMenu();
+  });
+
+  // close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
 })();
