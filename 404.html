@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="robots" content="noindex">
+  <title>404 — страница не найдена</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="stylesheet" href="/style.css?v=6">
+  <style>
+    .notfound {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: var(--space-4);
+      padding: var(--space-5) var(--space-3);
+    }
+    .notfound__code {
+      font-family: var(--font-mono);
+      font-size: clamp(4rem, 18vw, 9rem);
+      line-height: 1;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+    }
+    .notfound__title { font-size: clamp(1.2rem, 3vw, 1.6rem); }
+    .notfound__text { color: var(--fg-muted); max-width: 420px; }
+  </style>
+</head>
+<body>
+  <main class="notfound">
+    <p class="eyebrow">Ошибка</p>
+    <div class="notfound__code">404</div>
+    <h1 class="notfound__title">Страница не найдена</h1>
+    <p class="notfound__text">Такого адреса нет или он перемещён. Вернитесь на главную.</p>
+    <a href="/" class="btn btn--primary">На главную</a>
+  </main>
+</body>
+</html>
