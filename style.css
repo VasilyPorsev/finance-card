@@ -9,7 +9,7 @@
   --bg-elev: #101013;
   --bg-elev-2: #15151a;
   --fg: #ededed;
-  --fg-muted: #8a8a93;
+  --fg-muted: #9a9aa3;
   --accent: #00e5a8;
   --accent-soft: rgba(0, 229, 168, 0.10);
   --accent-strong: #00ffbb;
@@ -708,6 +708,14 @@ p { color: var(--fg); }
 }
 
 /* ============================================================
+   Tablet
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ============================================================
    Mobile
    ============================================================ */
 
@@ -731,9 +739,10 @@ p { color: var(--fg); }
     border-bottom: 1px solid var(--border);
     padding: var(--space-3);
     transform: translateY(-110%);
-    transition: transform var(--t);
+    visibility: hidden;
+    transition: transform var(--t), visibility var(--t);
   }
-  .site-header.is-open .nav { transform: translateY(0); }
+  .site-header.is-open .nav { transform: translateY(0); visibility: visible; }
 
   .nav__link {
     padding: var(--space-3);
