@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nslookup vasiliy-ai.ru 8.8.8.8)",
+      "Bash(curl -sS -o /dev/null -w \"http_code=%{http_code} ssl_verify=%{ssl_verify_result}\\\\n\" https://vasiliy-ai.ru/)",
+      "Skill(loop)",
+      "Skill(loop:*)",
+      "PowerShell($gh = \"$env:ProgramFiles\\\\GitHub CLI\\\\gh.exe\"; \"--- cert/pages state ---\"; & $gh api repos/VasilyPorsev/finance-card/pages --jq '{cert: .https_certificate.state, https_enforced, status}' 2>&1; \"--- https reachability ---\"; try { $r = Invoke-WebRequest -Uri \"https://vasiliy-ai.ru/\" -MaximumRedirection 5 -UseBasicParsing -TimeoutSec 25; \"https OK: HTTP $\\($r.StatusCode\\)\" } catch { \"https not ready: $\\($_.Exception.Message\\)\" })",
+      "Bash(curl -s -o /dev/null -w \"page %{http_code}\\\\n\" http://127.0.0.1:8000/)",
+      "Bash(curl -s http://127.0.0.1:8000/style.css)"
+    ]
+  }
+}
